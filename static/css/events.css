@@ -1,0 +1,58 @@
+/* importing previous styles */
+@import url("home.css");
+
+/* events page */
+.content h1 {
+  margin-bottom: 10px;
+  text-decoration: underline; /* basic underline */
+  font-size: 50px; /* making it large*/
+  letter-spacing: -2px; /* leters*/
+}
+
+/* grid parts */
+.events-grid {
+  display: block; /* removing the grid */
+  margin-top: 50px;
+  margin-bottom: 200px;
+}
+
+/* here is for the individual parts */
+.event-box {
+  border: 1px solid #000; /* basic border */
+  padding: 10px;
+  margin-bottom: 40px; /* gaps */
+  background-color: #e0e0e0; /* Default-looking grey */
+  width: 90%; /* screen */
+}
+
+/* some hover effect  */
+
+.event-date {
+  font-size: 12px;
+  background-color: yellow; /* color highlights*/
+  color: black;
+  display: inline-block;
+  padding: 2px;
+}
+
+.event-box h2 {
+  font-size: 30px;
+  margin: 5px 0;
+  font-family: serif; /* default */
+}
+
+.event-description {
+  font-weight: normal;
+  font-size: 14px;
+  color: blue; /* making the text blue if its not visited */
+  text-decoration: none;
+}
+
+/* adding images */
+.image-placeholder {
+  width: 100px;
+  height: 100px;
+  background: #ccc;
+  border: 1px dashed black;
+  margin-top: 10px;
+}
