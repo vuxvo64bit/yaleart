@@ -1,0 +1,84 @@
+/* this is to import the main styles from home page */
+@import url("home.css");
+
+
+.content h1 {
+  font-size: 60px;
+  margin-bottom: 40px;
+  font-weight: normal; /* design */
+}
+
+.contact-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  margin-bottom: 150px;
+}
+
+/* left side contact */
+.directory {
+  flex: 1;
+  min-width: 300px;
+}
+
+.directory p {
+  font-size: 14px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.directory a {
+  color: blue; /* link color */
+  text-decoration: underline;
+  text-transform: lowercase;
+}
+
+/* form box */
+.form-box {
+  border: 1px solid #ccc;
+  padding: 30px;
+  width: 400px;
+  background-color: #fff;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 5px;
+  font-weight: normal;
+}
+
+.form-group input, 
+.form-group textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  font-family: sans-serif; /* default fonts */
+}
+
+.submit-btn {
+  width: 100%;
+  background: #333;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.error-btn {
+  margin-top: 20px;
+  display: block;
+  width: 100%;
+  border: 2px solid black;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
