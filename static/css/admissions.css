@@ -1,0 +1,40 @@
+.content {
+  padding: 40px 30px 120px 30px;
+}
+
+.intro-text {
+  font-size: 18px;
+  line-height: 1.8;
+  letter-spacing: 0.08em;
+  margin-bottom: 80px;
+  max-width: 900px;
+}
+
+.intro-text a {
+  color: black;
+  text-decoration: underline;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.card {
+  border: 2px solid black;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+}
+
+.card a {
+  color: black;
+  text-decoration: underline;
+  font-size: 20px;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+}

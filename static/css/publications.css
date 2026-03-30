@@ -1,0 +1,64 @@
+.content {
+  padding: 40px 30px 120px 30px;
+}
+
+.intro-text {
+  font-size: 18px;
+  line-height: 1.8;
+  letter-spacing: 0.08em;
+  margin-bottom: 60px;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.intro-text a {
+  color: blue;
+  text-decoration: underline;
+}
+
+.publication-card {
+  display: flex;
+  border: 2px solid black;
+  margin-bottom: 40px;
+}
+
+.publication-card img {
+  width: 350px;
+  min-height: 400px;
+  object-fit: cover;
+  display: block;
+}
+
+.publication-info {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.publication-info h2 {
+  font-size: 18px;
+  font-weight: normal;
+  letter-spacing: 0.08em;
+}
+
+.publication-info p {
+  font-size: 15px;
+  line-height: 1.8;
+  letter-spacing: 0.08em;
+  font-weight: normal;
+}
+
+.view-more-btn {
+  display: block;
+  width: 200px;
+  margin: 0 auto;
+  border: 2px solid black;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  letter-spacing: 0.08em;
+}
