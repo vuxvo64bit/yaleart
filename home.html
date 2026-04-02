@@ -4,60 +4,82 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Yale Art</title>
-  <link rel="stylesheet" href="/yaleart/static/css/home.css" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="static/css/home.css" />
 </head>
 
 <body>
   <header class="header">
     <div class="logo">Yale School of Art</div>
-    <nav class="nav">
-      <a href="/yaleart/home.html">About</a>
-      <a href="/yaleart/admissions.html">Admissions</a>
-      <a href="/yaleart/exhibitions.html">Exhibitions</a>
-      <a href="/yaleart/publications.html">Publications</a>
-      <a href="/yaleart/events.html">Events</a>
-      <a href="/yaleart/contact.html">Contact</a>
+    
+    <button class="hamburger" id="hamburger-open">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="nav" id="side-menu">
+      <button class="close-btn" id="hamburger-close">&times;</button>
+      <a href="home.html">About</a>
+      <a href="admissions.html">Admissions</a>
+      <a href="exhibitions.html">Exhibitions</a>
+      <a href="publications.html">Publications</a>
+      <a href="events.html">Events</a>
+      <a href="contact.html">Contact</a>
       <a href="#">Search</a>
     </nav>
   </header>
 
   <main class="content">
-    <section class="intro-layout">
-      <h1 class="main-text">The School of Art is one of Yale's Graduate &amp; Professional 
+    <section class="hero-container">
+      <div class="intro-text-box">
+        <h1 class="main-text">
+          The School of Art is one of Yale's Graduate & Professional 
           Schools conferring MFA degrees in Graphic Design, Painting/Printmaking, 
           Photography, and Sculpture; and offers undergraduate-level art courses to Yale 
           College students. Our website exists as an ongoing collaborative experiment in 
-          digital publishing and information sharing. It functions as a wiki-all members 
+          digital publishing and information sharing. It functions as a wiki—all members 
           of the School of Art community have the ability to add new, and edit most 
-          existing content.</h1>
+          existing content.
+        </h1>
+      </div>
 
-      <aside class="login">
-        <svg class="login-avatar" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-user-round-icon lucide-circle-user-round"><path d="M17.925 20.056a6 6 0 0 0-11.851.001"/><circle cx="12" cy="11" r="4"/><circle cx="12" cy="12" r="10"/></svg>
-        <form class="login-form">
-          <input type="text" placeholder="USER"/>
-          <input type="password" placeholder="PASSWORD"/>
-          <button type="button">LOGIN</button>
-        </form>
+      <aside class="login-box">
+        <div class="login-inner">
+          <div class="login-avatar">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.925 20.056a6 6 0 0 0-11.851.001"/><circle cx="12" cy="11" r="4"/><circle cx="12" cy="12" r="10"/></svg>
+          </div>
+          <form class="login-form">
+            <input type="text" placeholder="USER"/>
+            <input type="password" placeholder="PASSWORD"/>
+            <button type="button">LOGIN</button>
+          </form>
+        </div>
       </aside>
     </section>
 
     <section class="calendar-section">
       <div class="calendar-header">
-        <h2>CALENDAR</h2>
+        <h2 class="calendar-title">CALENDAR</h2>
         <button class="dark-mode-btn">Dark Mode</button>
       </div>
-      <div class="events-container">
-        <div class="event-box">EVENT TITLE</div>
-        <div class="event-box">EVENT TITLE</div>
-        <div class="event-box">EVENT TITLE</div>
+      
+      <div class="calendar-outer-border">
+        <div class="events-grid">
+          <div class="event-card">EVENT TITLE</div>
+          <div class="event-card">EVENT TITLE</div>
+          <div class="event-card">EVENT TITLE</div>
+        </div>
+        <div class="view-all-wrapper">
+          <button class="view-all-btn">View All Events</button>
+        </div>
       </div>
-      <button class="view-all-btn">View All Events</button>
     </section>
   </main>
-</body>
-<footer class="footer">
-    <p>&copy; Yale School of Art 1156 Chapel Street, POB 208339, New Haven, Connecticut, 06520-8339 Phone: (XXX) XXX-XXXX and Email: art.admissions@yale.edu</p>
-</footer>
-</html>
 
+  <footer class="footer">
+    <p>&copy; Yale School of Art 1156 Chapel Street, POB 208339, New Haven, Connecticut, 06520-8339 Phone: (XXX) XXX-XXXX and Email: art.admissions@yale.edu</p>
+  </footer>
+
+  <script src="static/js/script.js"></script>
+</body>
+</html>
