@@ -1,38 +1,78 @@
-/* importing previous styles */
-@import url("home.css");
-
-/* events page */
-.content h1 {
-  margin-bottom: 10px;
-  text-decoration: underline; /* basic underline */
-  font-size: 50px; /* making it large*/
-  letter-spacing: -2px; /* leters*/
+/* mobile styles */
+.content {
+  padding: 30px 20px;
 }
 
-/* grid parts */
+.page-title {
+  font-size: 2.5rem;
+  text-decoration: underline;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
 .events-grid {
-  display: block; /* removing the grid */
-  margin-top: 50px;
-  margin-bottom: 200px;
+  display: grid;
+  grid-template-columns: 1fr; 
+  gap: 30px;
 }
 
-/* here is for the individual parts */
 .event-box {
-  border: 1px solid #000; /* basic border */
-  padding: 10px;
-  margin-bottom: 40px; /* gaps */
-  background-color: #e0e0e0; /* Default-looking grey */
-  width: 90%; /* screen */
+  border: 4px solid black; 
+  padding: 20px;
+  background-color: #f9f9f9;
 }
 
-/* some hover effect  */
+.special-event {
+  border: 6px solid red !important; 
+}
 
 .event-date {
-  font-size: 12px;
-  background-color: yellow; /* color highlights*/
+  font-size: 0.8rem;
+  background-color: yellow;
   color: black;
+  font-weight: bold;
+  padding: 4px 8px;
   display: inline-block;
-  padding: 2px;
+  margin-bottom: 10px;
+}
+
+.event-box h2 {
+  font-size: 1.8rem;
+  margin: 10px 0;
+  text-transform: uppercase;
+}
+
+.event-description {
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.image-placeholder {
+  width: 100%;
+  height: 150px;
+  background: #eee;
+  border: 2px dashed #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+/* desktop styles */
+@media (min-width: 1280px) {
+    .events-grid {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+
+    .page-title {
+        font-size: 4rem;
+    }
+
+    .event-box h2 {
+        font-size: 2.2rem;
+    }
 }
 
 .event-box h2 {
