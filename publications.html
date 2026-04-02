@@ -11,13 +11,21 @@
 <body>
   <header class="header">
     <div class="logo">Yale School of Art</div>
-    <nav class="nav">
-      <a href="/yaleart/home.html">About</a>
-      <a href="/yaleart/admissions.html">Admissions</a>
-      <a href="/yaleart/exhibitions.html">Exhibitions</a>
-      <a href="/yaleart/publications.html">Publications</a>
-      <a href="/yaleart/events.html">Events</a>
-      <a href="/yaleart/contact.html">Contact</a>
+    
+    <button class="hamburger" id="hamburger-open">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="nav" id="side-menu">
+      <button class="close-btn" id="hamburger-close">&times;</button>
+      <a href="home.html">About</a>
+      <a href="admissions.html">Admissions</a>
+      <a href="exhibitions.html">Exhibitions</a>
+      <a href="publications.html">Publications</a>
+      <a href="events.html">Events</a>
+      <a href="contact.html">Contact</a>
       <a href="#">Search</a>
     </nav>
   </header>
@@ -41,6 +49,8 @@
 
   <footer class="footer">
     <p>&copy; Yale School of Art 1156 Chapel Street, POB 208339, New Haven, Connecticut, 06520-8339 Phone: (XXX) XXX-XXXX and Email: art.admissions@yale.edu</p>
-</footer>
+  </footer>
+
+  <script src="static/js/script.js"></script>
 </body>
 </html>
