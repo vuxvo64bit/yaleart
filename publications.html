@@ -9,9 +9,12 @@
 </head>
 
 <body>
+
+  <!-- the header -->
   <header class="header">
-    <div class="logo"><a href="home.html">Yale School of Art</a></div>
-    
+    <div class="logo">Yale School of Art</div>
+
+    <!-- Hamburger for Mobile -->
     <button class="hamburger" id="hamburger-open">
       <span></span>
       <span></span>
@@ -20,15 +23,38 @@
 
     <nav class="nav" id="side-menu">
       <button class="close-btn" id="hamburger-close">&times;</button>
+      <a href="home.html">About</a>
       <a href="admissions.html">Admissions</a>
       <a href="exhibitions.html">Exhibitions</a>
-      <a href="publications.html">Publications</a>
+      <a href="#" class="current-page">Publications</a> <!-- fixed link -->
       <a href="events.html">Events</a>
       <a href="contact.html">Contact</a>
-      <a href="#">Search</a>
+
+      <!-- Search Button (like Home page) -->
+      <button class="search-trigger" id="search-open">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </button>
     </nav>
   </header>
 
+  <!-- serach overlay -->
+  <div class="search-overlay" id="search-overlay">
+    <button class="close-search" id="search-close">&times;</button>
+    <div class="search-content">
+      <h2 class="search-label">Search Publications</h2>
+      <div class="search-input-wrapper">
+        <input type="text" id="search-input" placeholder="Start typing..." autocomplete="off" />
+        <div id="search-loader" class="loader"></div>
+      </div>
+      <ul id="search-results" class="suggestions-list"></ul>
+      <p id="no-results" class="empty-state">No matching pages found.</p>
+    </div>
+  </div>
+
+  <!-- main content -->
   <main class="content">
     <p class="intro-text">
       <a href="#">This series of printed publications was initiated in 2017 and features the work of each recently graduated MFA class.</a>
@@ -46,10 +72,13 @@
     <a href="#" class="view-more-btn">View More</a>
   </main>
 
+  <!-- footer -->
   <footer class="footer">
-    <p>&copy; Yale School of Art 1156 Chapel Street, POB 208339, New Haven, Connecticut, 06520-8339 Phone: (XXX) XXX-XXXX and Email: art.admissions@yale.edu</p>
+    <p>&copy; Yale School of Art | 1156 Chapel Street, POB 208339, New Haven, Connecticut, 06520-8339 | Phone: (XXX) XXX-XXXX | Email: art.admissions@yale.edu</p>
   </footer>
 
-  <script src="static/js/script.js"></script>
+  <!-- script -->
+  <script src="static/js/publications.js"></script>
+
 </body>
 </html>
