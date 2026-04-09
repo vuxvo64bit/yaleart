@@ -1,91 +1,59 @@
-/* mobile styles */
-.content {
-  padding: 30px 20px;
+/* static/css/contact.css */
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 equal colums*/
+    gap: 40px; /* the space */
+    align-items: start; /* align content */
+    padding: 40px 0;
 }
 
-.page-title {
-  font-size: 2.5rem;
-  margin-bottom: 30px;
-  font-weight: bold;
-}
-
-.contact-wrapper {
-  display: flex;
-  flex-direction: column; /* stacked on mobile */
-  gap: 40px;
-  margin-bottom: 60px;
+.contact-left .page-title {
+    margin-top: 0; /* removing the top margin */
+    font-size: 3rem; 
 }
 
 .directory p {
-  font-size: 0.9rem;
-  margin-bottom: 15px;
-  text-transform: uppercase;
-  line-height: 1.4;
+    margin-bottom: 12px;
+    font-size: 0.9rem; 
+    color: #333;
+    line-height: 1.4;
 }
 
 .directory a {
-  color: blue;
-  text-decoration: underline;
-  text-transform: lowercase;
-  word-break: break-all; /* stops the long emails from breaking the layout */
+    color: blue;
+    text-decoration: underline;
 }
 
-/* Form Styling */
+/* box stretch */
 .form-box {
-  border: 4px solid black; /* make it look similar to other webpages */
-  padding: 25px;
-  background-color: #fff;
+    width: 100%;
 }
 
-.form-group {
-  margin-bottom: 20px;
-}
-
-.form-group label {
-  display: block;
-  font-size: 0.9rem;
-  margin-bottom: 8px;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-.form-group input, 
-.form-group textarea {
-  width: 100%;
-  padding: 12px;
-  border: 2px solid black;
-  font-family: sans-serif;
-  box-sizing: border-box; /* mobile width */
-}
-
+/* style buttom */
 .submit-btn {
-  width: 100%;
-  background: black;
-  color: white;
-  padding: 15px;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 1rem;
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%; /* Full width in form-box */
+    margin-top: 10px;
 }
 
-/* desktop layout */
-@media (min-width: 1280px) {
-    .contact-wrapper {
-        flex-direction: row; 
-        align-items: flex-start;
-    }
 
-    .directory {
-        flex: 1;
-    }
 
-    .form-box {
-        width: 450px;
-    }
-
-    .page-title {
-        font-size: 4rem;
-    }
+/* search overlay */
+.search-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.98); z-index: 2000;
+    display: none; flex-direction: column; align-items: center; padding-top: 10vh;
 }
+.search-content { width: 90%; max-width: 700px; text-align: center; }
+#search-input { width: 100%; background: transparent; border: none; border-bottom: 4px solid white; color: white; font-size: 3rem; outline: none; padding-bottom: 10px; }
+.suggestions-list { margin: 20px 0 0 0; padding: 0; list-style: none; }
+.suggestions-list li { color: white; font-size: 1.5rem; margin-bottom: 10px; cursor: pointer; transition: 0.2s; }
+.suggestions-list li:hover { text-decoration: underline; }
+.empty-state { color: #ccc; margin-top: 20px; display: none; }
