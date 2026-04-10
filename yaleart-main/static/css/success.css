@@ -1,0 +1,39 @@
+.content {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  min-height: 70vh;
+  padding: 40px 20px 120px 20px;
+  gap: 30px;
+}
+
+.content h1 {
+  font-size: 60px;
+  font-weight: normal;
+  letter-spacing: 0.12em;
+  color: black;
+  text-decoration: none;
+}
+
+.subtitle {
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  color: black;
+}
+
+.back-btn {
+  display: inline-block;
+  border: 2px solid black;
+  background: #fff;
+  padding: 20px 80px;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+  text-align: center;
+  letter-spacing: 0.05em;
+  margin-top: 20px;
+}
