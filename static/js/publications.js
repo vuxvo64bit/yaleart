@@ -62,3 +62,32 @@ window.addEventListener('load', () => {
     searchOverlay.style.display = 'none';
     searchInput.value = '';
 });
+
+
+const links = document.querySelectorAll("a[href]");
+
+links.forEach(link => {
+    link.addEventListener("click", function (e) {
+        const url = this.href;
+
+        // ignore external links
+        if (url.startsWith("http") && !url.includes(window.location.host)) {
+            return;
+        }
+
+        e.preventDefault();
+
+        // fade out
+        document.body.classList.add("fade-out");
+
+        // wait then navigate
+        setTimeout(() => {
+            window.location.href = url;
+        }, 400);
+    });
+});
+
+
+window.addEventListener("load", () => {
+    document.body.classList.remove("fade-out");
+});

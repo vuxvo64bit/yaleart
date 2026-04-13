@@ -64,62 +64,30 @@ window.addEventListener('load', () => {
 });
 
 
-// Week 12 - Now OUTSIDE the search listener
-const form = document.getElementById("contactForm");
-const nameInput = document.getElementById("name");
-const emailInput = document.getElementById("email");
+const links = document.querySelectorAll("a[href]");
 
-/* ---------- NAME ---------- */
-nameInput.addEventListener("input", () => {
-  const value = nameInput.value.trim();
+links.forEach(link => {
+    link.addEventListener("click", function (e) {
+        const url = this.href;
 
-  if (value.length < 2) {
-    showError(nameInput, "Name must be at least 2 characters");
-  } else {
-    showSuccess(nameInput);
-  }
+        // ignore external links
+        if (url.startsWith("http") && !url.includes(window.location.host)) {
+            return;
+        }
+
+        e.preventDefault();
+
+        // fade out
+        document.body.classList.add("fade-out");
+
+        // wait then navigate
+        setTimeout(() => {
+            window.location.href = url;
+        }, 400);
+    });
 });
 
-/* ---------- EMAIL ---------- */
-emailInput.addEventListener("input", () => {
-  const value = emailInput.value.trim();
 
-  const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
-
-  if (!emailPattern.test(value)) {
-    showError(emailInput, "Invalid email format");
-  } else {
-    showSuccess(emailInput);
-  }
+window.addEventListener("load", () => {
+    document.body.classList.remove("fade-out");
 });
-
-/* ---------- SUBMIT ---------- */
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  if (
-    nameInput.classList.contains("invalid") ||
-    emailInput.classList.contains("invalid")
-  ) {
-    alert("Fix errors before submitting");
-  } else {
-    alert("Form submitted");
-  }
-});
-
-/* ---------- HELPERS ---------- */
-function showError(input, message) {
-  const error = input.nextElementSibling;
-  error.textContent = message;
-
-  input.classList.add("invalid");
-  input.classList.remove("valid");
-}
-
-function showSuccess(input) {
-  const error = input.nextElementSibling;
-  error.textContent = "";
-
-  input.classList.add("valid");
-  input.classList.remove("invalid");
-}

@@ -1,4 +1,4 @@
-// ========== the wiki pages ==========
+// the wiki pages
 const wikiPages = [
     { name: "Graphic Design MFA", url: "https://art.yale.edu/graphic-design" },
     { name: "Painting & Printmaking", url: "https://art.yale.edu/painting-printmaking" },
@@ -7,7 +7,7 @@ const wikiPages = [
     { name: "Events", url: "events.html" }
 ];
 
-// ========== the elements ==========
+// the elements 
 const searchOpen = document.getElementById('search-open');
 const searchClose = document.getElementById('search-close');
 const searchOverlay = document.getElementById('search-overlay');
@@ -61,4 +61,34 @@ searchInput.oninput = () => {
 window.addEventListener('load', () => {
     searchOverlay.style.display = 'none';
     searchInput.value = '';
+});
+
+
+
+const links = document.querySelectorAll("a[href]");
+
+links.forEach(link => {
+    link.addEventListener("click", function (e) {
+        const url = this.href;
+
+        // TO IGNORE THE External links
+        if (url.startsWith("http") && !url.includes(window.location.host)) {
+            return;
+        }
+
+        e.preventDefault();
+
+        // fade out
+        document.body.classList.add("fade-out");
+
+        // wait then navigate
+        setTimeout(() => {
+            window.location.href = url;
+        }, 400);
+    });
+});
+
+
+window.addEventListener("load", () => {
+    document.body.classList.remove("fade-out");
 });
