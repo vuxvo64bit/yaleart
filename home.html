@@ -2,11 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Yale School of Art</title>
   <link rel="stylesheet" href="static/css/home.css" />
 </head>
+
 <body>
+
+  
   <div id="search-overlay" class="search-overlay">
     <button class="close-search" id="search-close">&times;</button>
     <div class="search-content">
@@ -17,8 +20,10 @@
     </div>
   </div>
 
+  
   <header class="header">
     <div class="logo">Yale School of Art</div>
+
     <nav class="nav" id="side-menu">
       <button class="close-btn" id="hamburger-close">&times;</button>
       <a href="home.html">About</a>
@@ -27,33 +32,48 @@
       <a href="publications.html">Publications</a>
       <a href="events.html">Events</a>
       <a href="contact.html">Contact</a>
+
       <button class="search-trigger" id="search-open">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="11" cy="11" r="8"></circle>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-        </svg>
+        🔍
       </button>
     </nav>
-    <button class="hamburger" id="hamburger-open"><span></span><span></span><span></span></button>
+
+    <button class="hamburger" id="hamburger-open">
+      <span></span><span></span><span></span>
+    </button>
   </header>
 
+  
   <main class="content">
+
+    
     <section class="hero-container">
       <div class="intro-text-box">
         <h1 class="main-text">
-          The School of Art is one of Yale's Graduate & Professional Schools conferring MFA degrees in Graphic Design, Painting/Printmaking, Photography, and Sculpture. Our website functions as a wiki—all members of the community can add and edit content.
+          The School of Art is one of Yale's Graduate & Professional Schools conferring MFA degrees in Graphic Design, Painting/Printmaking, Photography, and Sculpture.
         </h1>
       </div>
 
+      
       <aside class="login-box">
         <form class="login-form">
           <input type="text" placeholder="USER"/>
           <input type="password" placeholder="PASSWORD"/>
-          <button type="button" class="login-button">LOGIN</button>
+
+          <button type="button" class="login-button" id="login-btn">LOGIN</button>
+
+          
+          <div class="loading-bar-container" id="loading-container">
+            <div class="loading-bar" id="loading-bar"></div>
+          </div>
+
+          
+          <p id="login-status"></p>
         </form>
       </aside>
     </section>
 
+    
     <section class="calendar-section">
       <div class="calendar-outer-border">
         <div class="event-card">SPRING OPEN STUDIO</div>
@@ -61,69 +81,16 @@
         <div class="event-card">VISITING ARTIST LECTURE</div>
       </div>
     </section>
+
   </main>
 
+  
   <footer class="footer">
     <p>&copy; Yale School of Art | 1156 Chapel Street, New Haven, CT</p>
   </footer>
 
-  <script>
-    const wikiPages = [
-      { name: "Graphic Design MFA", url: "https://art.yale.edu/graphic-design" },
-      { name: "Painting & Printmaking", url: "https://art.yale.edu/painting-printmaking" },
-      { name: "Photography", url: "https://art.yale.edu/photography" },
-      { name: "Admissions", url: "https://art.yale.edu/admissions" },
-      { name: "Events", url: "events.html" }
-    ];
+ 
+  <script src="static/js/script.js"></script>
 
-    const searchOpen = document.getElementById('search-open');
-    const searchClose = document.getElementById('search-close');
-    const searchOverlay = document.getElementById('search-overlay');
-    const searchInput = document.getElementById('search-input');
-    const searchResults = document.getElementById('search-results');
-    const noResults = document.getElementById('no-results');
-    const hamburger = document.getElementById('hamburger-open');
-    const sideMenu = document.getElementById('side-menu');
-    const hamburgerClose = document.getElementById('hamburger-close');
-
-    hamburger.onclick = () => sideMenu.classList.add('active');
-    hamburgerClose.onclick = () => sideMenu.classList.remove('active');
-
-    searchOpen.onclick = () => {
-      searchOverlay.style.display = 'flex';
-      searchInput.value = '';
-      searchResults.innerHTML = '';
-      noResults.style.display = 'none';
-      searchInput.focus();
-    };
-
-    searchClose.onclick = () => searchOverlay.style.display = 'none';
-
-    searchInput.oninput = () => {
-      const term = searchInput.value.toLowerCase();
-      searchResults.innerHTML = '';
-      if(term.length > 0){
-        const matches = wikiPages.filter(p => p.name.toLowerCase().includes(term));
-        if(matches.length > 0){
-          matches.forEach(match => {
-            const li = document.createElement('li');
-            li.textContent = match.name;
-            li.onclick = () => window.location.href = match.url;
-            searchResults.appendChild(li);
-          });
-          noResults.style.display = 'none';
-        } else {
-          noResults.style.display = 'block';
-        }
-      } else {
-        noResults.style.display = 'none';
-      }
-    };
-
-    window.addEventListener('load', () => {
-      searchOverlay.style.display = 'none';
-      searchInput.value = '';
-    });
-  </script>
 </body>
 </html>

@@ -21,11 +21,21 @@ This is a better version of the offical Yale School Of Art Website.
 * The hamburger menu opens and closes perfectly on every page.
 
 ## The checklist
-* [x] Mobile-first CSS (375px).
-* [x] Desktop CSS (1280px).
-* [x] Hamburger menu works with JS.
-* [x] No horizontal scrolling.
-* [x] Same header/footer on all 6 pages.
+
+ Search bar works and shows results while typing
+ Search updates instantly (no submit needed)
+ Clearing the search removes suggestions
+ Shows “no results” if nothing matches
+ Clicking a result takes you to the right page
+ Loading bar added to login button
+ Loading animation plays when login is clicked
+ Button disables while loading so it can’t be spammed
+ Shows “Signed In ” after loading finishes
+ Page fade in/out animation when switching pages
+ Hover effects added on cards and sections
+ Animations are smooth and not laggy
+ No console errors
+ Everything works across all pages
 
 ## People
 * Sumran Nasir
