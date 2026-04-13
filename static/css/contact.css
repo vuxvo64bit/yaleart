@@ -2,14 +2,14 @@
 
 .contact-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* 2 equal colums*/
-    gap: 40px; /* the space */
-    align-items: start; /* align content */
+    grid-template-columns: 1fr 1fr; 
+    gap: 40px; 
+    align-items: start; 
     padding: 40px 0;
 }
 
 .contact-left .page-title {
-    margin-top: 0; /* removing the top margin */
+    margin-top: 0; 
     font-size: 3rem; 
 }
 
@@ -39,13 +39,13 @@
     border-radius: 4px;
     cursor: pointer;
     font-weight: bold;
-    width: 100%; /* Full width in form-box */
+    width: 100%;
     margin-top: 10px;
 }
 
 
 
-/* search overlay */
+/* THE SEARCH OVERLAY */
 .search-overlay {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
     background: rgba(0, 0, 0, 0.98); z-index: 2000;
@@ -57,3 +57,15 @@
 .suggestions-list li { color: white; font-size: 1.5rem; margin-bottom: 10px; cursor: pointer; transition: 0.2s; }
 .suggestions-list li:hover { text-decoration: underline; }
 .empty-state { color: #ccc; margin-top: 20px; display: none; }
+
+
+
+/* this is the page transition */
+body {
+    opacity: 1;
+    transition: opacity 0.4s ease;
+}
+
+body.fade-out {
+    opacity: 0;
+}

@@ -43,3 +43,14 @@
   text-align: center;
   letter-spacing: 0.05em;
 }
+
+
+/* the page transition*/
+body {
+    opacity: 1;
+    transition: opacity 0.4s ease;
+}
+
+body.fade-out {
+    opacity: 0;
+}

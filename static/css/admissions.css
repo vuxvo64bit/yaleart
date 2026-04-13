@@ -1,4 +1,4 @@
-/* ── COLOR PALETTE ── */
+/* this is the color palette for the website */
 :root {
   --yellow:  #F7E000;
   --red:     #E8272A;
@@ -115,4 +115,15 @@ body { margin: 0; padding: 0; font-family: 'Georgia', serif; background-color: v
 @media (max-width: 600px) {
     .yale-grid { grid-template-columns: 1fr; }
     .yale-intro { font-size: 1.4rem; }
+}
+
+
+/* THIS IS for the page transition */
+body {
+    opacity: 1;
+    transition: opacity 0.4s ease;
+}
+
+body.fade-out {
+    opacity: 0;
 }
