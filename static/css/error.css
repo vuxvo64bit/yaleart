@@ -54,3 +54,28 @@ body {
 body.fade-out {
     opacity: 0;
 }
+
+
+/* Hide the mobile close button by default on desktop */
+.close-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 2rem;
+    cursor: pointer;
+    align-self: flex-end; /* Keeps it to the right in mobile view */
+    padding: 10px 20px;
+}
+
+/* Show it only when the screen is small (inside your existing media query) */
+@media (max-width: 1279px) {
+    .close-btn {
+        display: block; 
+    }
+    
+    .hamburger { display: block; }
+    .nav { 
+        /* ... your existing mobile nav code ... */
+    }
+}
