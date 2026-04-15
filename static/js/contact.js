@@ -7,7 +7,7 @@ const wikiPages = [
     { name: "Events", url: "events.html" }
 ];
 
-// ========== the elements ==========
+// UI Elements
 const searchOpen = document.getElementById('search-open');
 const searchClose = document.getElementById('search-close');
 const searchOverlay = document.getElementById('search-overlay');
@@ -15,15 +15,26 @@ const searchInput = document.getElementById('search-input');
 const searchResults = document.getElementById('search-results');
 const noResults = document.getElementById('no-results');
 
-// the mobile menu
 const hamburger = document.getElementById('hamburger-open');
 const sideMenu = document.getElementById('side-menu');
 const hamburgerClose = document.getElementById('hamburger-close');
 
+const contactForm = document.getElementById('contact-form');
+const submitBtn = document.getElementById('submit-btn');
+const loadingContainer = document.getElementById('loading-container');
+const loadingBar = document.getElementById('loading-bar');
+const formStatus = document.getElementById('form-status');
+
+const fnameInp = document.getElementById('fname');
+const lnameInp = document.getElementById('lname');
+const emailInp = document.getElementById('email');
+const messageInp = document.getElementById('message');
+
+// Menu Controls
 hamburger.onclick = () => sideMenu.classList.add('active');
 hamburgerClose.onclick = () => sideMenu.classList.remove('active');
 
-// open the serach overlay
+// Search functionality
 searchOpen.onclick = () => {
     searchOverlay.style.display = 'flex';
     searchInput.value = '';
@@ -31,11 +42,8 @@ searchOpen.onclick = () => {
     noResults.style.display = 'none';
     searchInput.focus();
 };
-
-// to close the search
 searchClose.onclick = () => searchOverlay.style.display = 'none';
 
-// filter search
 searchInput.oninput = () => {
     const term = searchInput.value.toLowerCase();
     searchResults.innerHTML = '';
@@ -57,36 +65,59 @@ searchInput.oninput = () => {
     }
 };
 
-// make sure the overlay is hidden when it loads
-window.addEventListener('load', () => {
-    searchOverlay.style.display = 'none';
-    searchInput.value = '';
-});
+// Form Validation
+const updateUI = (field, errorId, isValid, message) => {
+    const errorSpan = document.getElementById(errorId);
+    if (isValid) {
+        field.classList.add("input-success");
+        field.classList.remove("input-error");
+        errorSpan.textContent = ""; 
+    } else {
+        field.classList.add("input-error");
+        field.classList.remove("input-success");
+        errorSpan.textContent = message;
+    }
+};
 
+fnameInp.addEventListener("input", () => updateUI(fnameInp, "fname-error", fnameInp.value.length >= 2, "Enter first name"));
+lnameInp.addEventListener("input", () => updateUI(lnameInp, "lname-error", lnameInp.value.length >= 2, "Enter last name"));
+emailInp.addEventListener("input", () => updateUI(emailInp, "email-error", emailInp.value.includes('@'), "Enter valid email"));
+messageInp.addEventListener("input", () => updateUI(messageInp, "message-error", messageInp.value.length >= 30, "Minimum 30 characters required"));
 
-const links = document.querySelectorAll("a[href]");
+// "Sending" Logic (mirroring login bar from home page)
+submitBtn.onclick = () => {
+    if (fnameInp.value.length >= 2 && emailInp.value.includes('@') && messageInp.value.length >= 30) {
+        loadingBar.style.width = "0%";
+        formStatus.textContent = "";
+        loadingContainer.style.display = "block";
+        submitBtn.disabled = true;
 
-links.forEach(link => {
+        setTimeout(() => { loadingBar.style.width = "100%"; }, 50);
+        
+        setTimeout(() => {
+            loadingContainer.style.display = "none";
+            formStatus.style.color = "var(--black)";
+            formStatus.textContent = "Message Sent Successfully! ✔";
+            contactForm.reset();
+            [fnameInp, lnameInp, emailInp, messageInp].forEach(el => el.classList.remove("input-success"));
+            submitBtn.disabled = false;
+        }, 2000);
+    } else {
+        formStatus.style.color = "var(--red)";
+        formStatus.textContent = "Please check required fields.";
+    }
+};
+
+// Transitions
+document.querySelectorAll("a[href]").forEach(link => {
     link.addEventListener("click", function (e) {
         const url = this.href;
-
-        // ignore external links
-        if (url.startsWith("http") && !url.includes(window.location.host)) {
-            return;
-        }
-
+        if (url.startsWith("http") && !url.includes(window.location.host)) return;
         e.preventDefault();
-
-        // fade out
         document.body.classList.add("fade-out");
-
-        // wait then navigate
-        setTimeout(() => {
-            window.location.href = url;
-        }, 400);
+        setTimeout(() => { window.location.href = url; }, 400);
     });
 });
-
 
 window.addEventListener("load", () => {
     document.body.classList.remove("fade-out");

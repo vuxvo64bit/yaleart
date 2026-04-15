@@ -91,3 +91,5 @@ links.forEach(link => {
 window.addEventListener("load", () => {
     document.body.classList.remove("fade-out");
 });
+
+
