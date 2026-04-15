@@ -5,11 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Yale School of Art</title>
   <link rel="stylesheet" href="static/css/home.css" />
+  <style>
+    /* Inline fix to ensure the search trigger aligns correctly with nav links */
+    .nav {
+      display: flex;
+      align-items: center;
+    }
+    .search-trigger {
+      display: flex;
+      align-items: center;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      margin-left: 15px; /* Adjust spacing as needed */
+    }
+  </style>
 </head>
 
 <body>
-
-  
   <div id="search-overlay" class="search-overlay">
     <button class="close-search" id="search-close">&times;</button>
     <div class="search-content">
@@ -20,10 +34,8 @@
     </div>
   </div>
 
-  
   <header class="header">
     <div class="logo">Yale School of Art</div>
-
     <nav class="nav" id="side-menu">
       <button class="close-btn" id="hamburger-close">&times;</button>
       <a href="home.html">About</a>
@@ -32,21 +44,19 @@
       <a href="publications.html">Publications</a>
       <a href="events.html">Events</a>
       <a href="contact.html">Contact</a>
-
       <button class="search-trigger" id="search-open">
-        🔍
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
       </button>
     </nav>
-
     <button class="hamburger" id="hamburger-open">
       <span></span><span></span><span></span>
     </button>
   </header>
 
-  
   <main class="content">
-
-    
     <section class="hero-container">
       <div class="intro-text-box">
         <h1 class="main-text">
@@ -54,26 +64,35 @@
         </h1>
       </div>
 
-      
-      <aside class="login-box">
-        <form class="login-form">
-          <input type="text" placeholder="USER"/>
-          <input type="password" placeholder="PASSWORD"/>
-
-          <button type="button" class="login-button" id="login-btn">LOGIN</button>
-
-          
-          <div class="loading-bar-container" id="loading-container">
-            <div class="loading-bar" id="loading-bar"></div>
+      <aside class="login-container">
+        <div class="login-box">
+          <div style="margin-bottom: 25px; display: flex; justify-content: center;">
+            <img src="images/user.png" alt="User Profile" 
+                 style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 4px solid black;">
           </div>
 
-          
-          <p id="login-status"></p>
-        </form>
+          <form class="login-form" id="login-form">
+            <div class="input-group">
+              <input type="text" id="login-user" placeholder="USER" autocomplete="off"/>
+              <span class="error-msg" id="user-error"></span>
+            </div>
+            
+            <div class="input-group">
+              <input type="password" id="login-pass" placeholder="PASSWORD"/>
+              <span class="error-msg" id="pass-error"></span>
+            </div>
+
+            <button type="button" class="login-button" id="login-btn">LOGIN</button>
+
+            <div class="loading-bar-container" id="loading-container">
+              <div class="loading-bar" id="loading-bar"></div>
+            </div>
+            <p id="login-status"></p>
+          </form>
+        </div>
       </aside>
     </section>
 
-    
     <section class="calendar-section">
       <div class="calendar-outer-border">
         <div class="event-card">SPRING OPEN STUDIO</div>
@@ -81,16 +100,12 @@
         <div class="event-card">VISITING ARTIST LECTURE</div>
       </div>
     </section>
-
   </main>
 
-  
   <footer class="footer">
     <p>&copy; Yale School of Art | 1156 Chapel Street, New Haven, CT</p>
   </footer>
 
- 
   <script src="static/js/script.js"></script>
-
 </body>
 </html>
