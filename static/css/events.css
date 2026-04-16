@@ -1,5 +1,3 @@
-
-
 /* mobile styles */
 .content {
   padding: 30px 20px;
@@ -51,15 +49,10 @@
   margin-bottom: 15px;
 }
 
-.image-placeholder {
+.event-img {
   width: 100%;
-  height: 150px;
-  background: #eee;
-  border: 2px dashed #000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
+  height: 200px;
+  object-fit: cover;
 }
 
 /* desktop styles */
@@ -80,36 +73,51 @@
 /* the serach overlay */
 .search-overlay {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.98); z-index: 2000;
-    display: none; flex-direction: column; align-items: center; padding-top: 10vh;
+    background: #4bffe7;
+    z-index: 2000;
+    display: none; 
+    flex-direction: column; 
+    align-items: center; 
+    padding-top: 10vh;
 }
-.search-content { width: 90%; max-width: 700px; text-align: center; }
-#search-input { width: 100%; background: transparent; border: none; border-bottom: 4px solid white; color: white; font-size: 3rem; outline: none; padding-bottom: 10px; }
-.suggestions-list { margin: 20px 0 0 0; padding: 0; list-style: none; }
-.suggestions-list li { color: white; font-size: 1.5rem; margin-bottom: 10px; cursor: pointer; transition: 0.2s; }
-.suggestions-list li:hover { text-decoration: underline; }
-.empty-state { color: #ccc; margin-top: 20px; display: none; }
 
 .search-content {
   width: 90%;
   max-width: 700px;
+  text-align: center;
 }
 
-#search-input {
-  width: 100%;
-  background: transparent;
-  border: none;
-  border-bottom: 4px solid white;
-  color: white;
-  font-size: 3rem;
-  outline: none;
-  padding-bottom: 10px;
+.search-label {
+    color: #0A0A0A;
+    margin-bottom: 20px;
+    font-size: 2rem;
 }
 
+#search-input { 
+    width: 100%; 
+    background: transparent; 
+    border: none; 
+    border-bottom: 4px solid #0A0A0A;
+    color: #0A0A0A;
+    font-size: 3rem; 
+    outline: none; 
+    padding-bottom: 10px; 
+}
 
+.suggestions-list { margin: 20px 0 0 0; padding: 0; list-style: none; }
+
+.suggestions-list li { 
+    color: #0A0A0A;
+    font-size: 1.5rem; 
+    margin-bottom: 10px; 
+    cursor: pointer; 
+    transition: 0.2s; 
+}
+
+.suggestions-list li:hover { text-decoration: underline; }
 
 .empty-state {
-  color: white;
+  color: #0A0A0A;
   display: none;
   margin-top: 20px;
   text-align: center;
@@ -121,7 +129,7 @@
   right: 15px;
   width: 20px;
   height: 20px;
-  border: 3px solid white;
+  border: 3px solid #0A0A0A;
   border-top: 3px solid transparent;
   border-radius: 50%;
   animation: spin 1s linear infinite;
@@ -133,9 +141,7 @@
   100% { transform: rotate(360deg); }
 }
 
-
-
-/* this is the page transition*/
+/* page transition */
 body {
     opacity: 1;
     transition: opacity 0.4s ease;
@@ -145,7 +151,6 @@ body.fade-out {
     opacity: 0;
 }
 
-
 /* Hide the mobile close button by default on desktop */
 .close-btn {
     display: none;
@@ -154,57 +159,14 @@ body.fade-out {
     color: var(--white);
     font-size: 2rem;
     cursor: pointer;
-    align-self: flex-end; /* Keeps it to the right in mobile view */
+    align-self: flex-end;
     padding: 10px 20px;
 }
 
-/* Show it only when the screen is small (inside your existing media query) */
 @media (max-width: 1279px) {
     .close-btn {
         display: block; 
     }
     
     .hamburger { display: block; }
-    .nav { 
-        /* ... your existing mobile nav code ... */
-    }
-}
-
-
-
-/* Update these in your exhibitions.css */
-
-.search-overlay {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background: #4bffe7; /* This is your --yellow color */
-    z-index: 2000;
-    display: none; 
-    flex-direction: column; 
-    align-items: center; 
-    padding-top: 10vh;
-}
-
-.search-label {
-    color: #0A0A0A; /* Dark text so it shows up on yellow */
-    margin-bottom: 20px;
-    font-size: 2rem;
-}
-
-#search-input { 
-    width: 100%; 
-    background: transparent; 
-    border: none; 
-    border-bottom: 4px solid #0A0A0A; /* Black border to match yellow theme */
-    color: #0A0A0A; /* Black text for the input */
-    font-size: 3rem; 
-    outline: none; 
-    padding-bottom: 10px; 
-}
-
-.suggestions-list li { 
-    color: #0A0A0A; /* Dark text for search results */
-    font-size: 1.5rem; 
-    margin-bottom: 10px; 
-    cursor: pointer; 
-    transition: 0.2s; 
 }

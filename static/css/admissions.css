@@ -93,7 +93,13 @@ body { margin: 0; padding: 0; font-family: 'Georgia', serif; background-color: v
 }
 
 /* the footer */
-.footer { padding: 20px 40px; border-top: 4px solid var(--black); font-size: 0.8rem; font-family: 'Georgia', serif; }
+.footer {
+    padding: 20px 40px;
+    border-top: 4px solid var(--black);
+    font-size: 0.8rem;
+    font-family: 'Georgia', serif;
+    text-align: left;
+}
 
 /* for mobile */
 .hamburger { display: none; background: none; border: none; cursor: pointer; flex-direction: column; justify-content: center; }
@@ -117,8 +123,7 @@ body { margin: 0; padding: 0; font-family: 'Georgia', serif; background-color: v
     .yale-intro { font-size: 1.4rem; }
 }
 
-
-/* THIS IS for the page transition */
+/* page transition */
 body {
     opacity: 1;
     transition: opacity 0.4s ease;
@@ -128,8 +133,6 @@ body.fade-out {
     opacity: 0;
 }
 
-
-
 /* Hide the mobile close button by default on desktop */
 .close-btn {
     display: none;
@@ -138,18 +141,14 @@ body.fade-out {
     color: var(--white);
     font-size: 2rem;
     cursor: pointer;
-    align-self: flex-end; /* Keeps it to the right in mobile view */
+    align-self: flex-end;
     padding: 10px 20px;
 }
 
-/* Show it only when the screen is small (inside your existing media query) */
 @media (max-width: 1279px) {
     .close-btn {
         display: block; 
     }
     
     .hamburger { display: block; }
-    .nav { 
-        /* ... your existing mobile nav code ... */
-    }
 }
