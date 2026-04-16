@@ -114,6 +114,16 @@ body.fade-out { opacity: 0; }
 .event-card:nth-child(2) { background: var(--blue); color: var(--white); }
 .event-card:nth-child(3) { background: var(--green); color: var(--black); }
 
+/* FOOTER */
+.footer {
+    position: static;
+    width: 100%;
+    border-top: 4px solid var(--black);
+    padding: 14px 24px;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
 /* RESPONSIVENESS */
 @media (max-width: 1100px) {
     .hero-container { flex-direction: column; text-align: center; padding: 40px 5%; }
@@ -130,4 +140,8 @@ body.fade-out { opacity: 0; }
     .nav { position: fixed; right: -100%; top: 0; background: var(--black); height: 100%; flex-direction: column; width: 250px; padding-top: 60px; transition: 0.3s; border-left: 4px solid var(--yellow); }
     .nav.active { right: 0; }
     .close-btn { display: block; align-self: flex-end; padding: 10px 20px; }
+}
+
+@media (max-width: 768px) {
+    .footer { font-size: 0.72rem; padding: 12px 16px; }
 }
