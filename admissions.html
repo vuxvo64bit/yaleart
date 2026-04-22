@@ -54,10 +54,21 @@
     </section>
   </main>
 
-  <footer class="footer">
-    <p>&copy; Yale School of Art | 1156 Chapel Street, POB 208339, New Haven, Connecticut, 06520-8339 | Phone: (XXX) XXX-XXXX | Email: art.admissions@yale.edu</p>
-  </footer>
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footer-text">&copy; Yale School of Art | 1156 Chapel Street, New Haven, CT</p>
+    
+    <div class="toggle-container">
+      <span class="mode-label">DARK MODE</span>
+      <label class="switch">
+        <input type="checkbox" id="dark-mode-toggle" onclick="toggleDarkMode()">
+        <span class="slider"></span>
+      </label>
+    </div>
+  </div>
+</footer>
 
-  <script src="static/js/admissions.js"></script>
+
+<script src="static/js/dark.js"></script>
+  <script src="static/js/admissions.js"></script> 
 </body>
-</html>
