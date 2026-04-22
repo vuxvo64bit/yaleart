@@ -75,8 +75,8 @@ body { margin: 0; padding: 0; font-family: 'Georgia', serif; background-color: v
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.yale-box:nth-child(1) { background: var(--blue); }
-.yale-box:nth-child(2) { background: var(--red); }
+.yale-box:nth-child(1) { background: var(--blue); color: var(--black); }
+.yale-box:nth-child(2) { background: var(--red); color: var(--black); }
 .yale-box:nth-child(3) { background: var(--green); color: var(--black); }
 .yale-box:nth-child(4) { background: var(--yellow); color: var(--black); }
 
@@ -92,19 +92,77 @@ body { margin: 0; padding: 0; font-family: 'Georgia', serif; background-color: v
     line-height: 1.1;
 }
 
-/* the footer */
+/* Footer Layout Fix */
 .footer {
-    position: static;
-    width: 100%;
-    box-sizing: border-box;
-    background: var(--white);
-    border-top: 4px solid var(--black);
-    padding: 14px 24px;
+    border-top: 4px solid var(--black); /* This is your missing line */
+    padding: 20px 30px;
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#footer-text {
+    color: var(--black); /* Changes with the variable */
+    margin: 0;
     font-size: 0.8rem;
-    line-height: 1.4;
+}
+
+/* Toggle Switch Styling */
+.toggle-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.mode-label {
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: var(--black);
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+
+.switch input { opacity: 0; width: 0; height: 0; }
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border: 2px solid var(--black);
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 12px; width: 12px;
+    left: 2px; bottom: 2px;
+    background-color: var(--black);
+    transition: .4s;
+}
+
+input:checked + .slider { background-color: var(--yellow); }
+input:checked + .slider:before { transform: translateX(20px); }
+
+/* Specific button styling to keep it consistent */
+#dark-mode-btn {
+    background: var(--black);
+    color: var(--yellow);
+    border: 2px solid var(--black);
+    padding: 8px 16px;
+    cursor: pointer;
+    font-weight: bold;
     font-family: 'Georgia', serif;
-    text-align: center;
-    z-index: 950;
+    text-transform: uppercase;
 }
 
 /* for mobile */
@@ -162,4 +220,32 @@ body.fade-out {
     }
     
     .hamburger { display: block; }
+}
+
+
+/* --- Dark Mode Specific Adjustments --- */
+
+/* Ensure the intro text flips to white in dark mode */
+.yale-intro {
+    color: var(--black); 
+}
+
+/* Ensure the links in the intro text remain visible but look good */
+.yale-intro a {
+    color: var(--blue);
+}
+
+/* Adjust the grid boxes: when in dark mode, the borders should stay visible */
+.yale-box {
+    border: 6px solid var(--black);
+}
+
+/* Ensure the green and yellow boxes (which have black text) swap correctly */
+.yale-box:nth-child(3), .yale-box:nth-child(4) {
+    color: var(--black);
+}
+
+/* Footer border visibility */
+.footer {
+    border-top: 4px solid var(--black);
 }

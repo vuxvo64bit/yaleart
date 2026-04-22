@@ -170,3 +170,63 @@ body.fade-out {
     
     .hamburger { display: block; }
 }
+
+
+
+/* --- Dark Mode Support --- */
+
+/* Ensure the title flips color */
+.page-title {
+    color: var(--black);
+}
+
+/* Update event boxes to have correct borders and backgrounds */
+.event-box {
+    border: 4px solid var(--black); 
+    background-color: var(--white); /* This makes the box flip with the page */
+    color: var(--black);
+}
+
+/* Ensure the description text is readable */
+.event-description {
+    color: var(--black);
+}
+
+/* Special event (Thesis Show) border needs to remain visible */
+.special-event {
+    border: 6px solid var(--red) !important; 
+}
+
+/* Keep the date tags popping */
+.event-date {
+    background-color: var(--yellow);
+    color: #0A0A0A; /* Keep text dark on yellow for contrast */
+}
+
+/* Footer layout and toggle alignment */
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#footer-text {
+    color: var(--black);
+    margin: 0;
+}
+
+/* Toggle Switch Styles */
+.toggle-container { display: flex; align-items: center; gap: 10px; }
+.mode-label { font-size: 0.75rem; font-weight: bold; color: var(--black); }
+.switch { position: relative; display: inline-block; width: 40px; height: 20px; }
+.switch input { opacity: 0; width: 0; height: 0; }
+.slider {
+    position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #ccc; transition: .4s; border: 2px solid var(--black);
+}
+.slider:before {
+    position: absolute; content: ""; height: 12px; width: 12px;
+    left: 2px; bottom: 2px; background-color: var(--black); transition: .4s;
+}
+input:checked + .slider { background-color: var(--yellow); }
+input:checked + .slider:before { transform: translateX(20px); }
