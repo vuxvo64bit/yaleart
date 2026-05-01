@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yale Art - Exhibitions</title>
+  <link rel="stylesheet" href="static/css/home.css" />
+  <link rel="stylesheet" href="static/css/exhibitions.css" />
+</head>
+<body>
+
+  <!-- search overlay -->
+  <div id="search-overlay" class="search-overlay">
+    <button class="close-search" id="search-close">&times;</button>
+    <div class="search-content">
+      <h2 class="search-label">Search the Yale Wiki</h2>
+      <div class="search-input-wrapper">
+        <input type="text" id="search-input" placeholder="Start typing..." autocomplete="off">
+        <div id="search-loader" class="loader"></div>
+      </div>
+      <ul id="search-results" class="suggestions-list"></ul>
+      <p id="no-results" class="empty-state">No matching pages found.</p>
+    </div>
+  </div>
+
+  <!-- header -->
+  <header class="header">
+    <div class="logo">Yale School of Art</div>
+
+    <button class="hamburger" id="hamburger-open">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="nav" id="side-menu">
+      <button class="close-btn" id="hamburger-close">&times;</button>
+      <a href="home.html">About</a>
+      <a href="admissions.html">Admissions</a>
+      <a href="exhibitions.html">Exhibitions</a>
+      <a href="publications.html">Publications</a>
+      <a href="events.html">Events</a>
+      <a href="contact.html">Contact</a>
+
+      <button class="search-trigger" id="search-open">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </button>
+    </nav>
+  </header>
+
+  <!-- main content -->
+  <main class="content">
+
+    <!-- intro -->
+    <section class="intro-layout">
+      <p class="main-text">
+        The School of Art galleries in Green Hall provide a year-round forum for the 
+        exhibition of work by students, faculty, and special guests in the four graduate 
+        departments of the School and the undergraduate program. 32 Edgewood Gallery is a 
+        supplemental exhibition space that is activated by School of Art students and faculty. 
+        Green Hall Gallery at 1156 Chapel Street is open to Yale community members.
+      </p>
+    </section>
+
+    <!-- NEW PANEL WRAPPER -->
+    <div class="exhibition-panel">
+
+      <section class="exhibition-section">
+        <h2 class="exhibition-title">Spring 2026 In Green Hall Gallery</h2>
+
+        <div class="exhibition-details">
+          <p>Public reception: Friday, March 27th from 6–8PM</p>
+
+          <p class="bold-entry">Graphic Design MFA Thesis Exhibition</p>
+          <p>April 9 – 17, 2026</p>
+
+          <div class="divider"></div>
+
+          <p>Public reception: Friday, April 17th from 6–8PM</p>
+          <p class="bold-entry">Undergraduate Thesis Exhibition</p>
+          <p>April 26 – May 3, 2026</p>
+
+          <div class="divider"></div>
+
+          <p>Public reception: Friday, May 1st from 6–8PM</p>
+          <p class="bold-entry">Photography MFA Thesis Exhibition</p>
+          <p>May 12 – 19, 2026</p>
+
+          <div class="divider"></div>
+
+          <p>Public reception: Friday, May 15th from 6–8PM</p>
+        </div>
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <p id="footer-text">&copy; Yale School of Art | 1156 Chapel Street, New Haven, CT</p>
+
+      <div class="toggle-container">
+        <span class="mode-label">DARK MODE</span>
+        <label class="switch">
+          <input type="checkbox" id="dark-mode-toggle" onclick="toggleDarkMode()">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+  </footer>
+
+  <!--  script -->
+  <script src="static/js/script.js"></script>
+
+</body>
+</html>

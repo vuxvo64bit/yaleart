@@ -1,0 +1,364 @@
+.content {
+  padding: 40px 20px;
+}
+
+.publication-container {
+  max-width: 1300px;
+  margin: 80px auto 60px auto;
+  padding: 20px;
+}
+
+.publication-card {
+  display: flex;
+  flex-direction: column;
+  border: 4px solid var(--black);
+  background: var(--white);
+  box-shadow: 10px 10px 0 var(--black);
+  transition: all 0.25s ease;
+  position: relative;
+}
+
+.publication-card:hover {
+  transform: translate(-6px, -6px);
+}
+
+.publication-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  padding: 20px;
+}
+
+.publication-info {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.publication-info h2 {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.publication-info p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.view-more-btn {
+  display: inline-block;
+  width: fit-content;
+  margin-top: 10px;
+  border: 3px solid var(--black);
+  padding: 12px 26px;
+  text-decoration: none;
+  color: var(--black);
+  font-weight: bold;
+  transition: all 0.25s ease;
+}
+
+.view-more-btn:hover {
+  background-color: var(--black);
+  color: var(--yellow);
+}
+
+@media (min-width: 1280px) {
+  .content {
+    padding: 80px 180px;
+  }
+
+  .publication-card {
+    flex-direction: row;
+    align-items: center;
+    gap: 70px;
+    padding: 40px;
+  }
+
+  .publication-image {
+    width: 420px;
+  }
+
+  .publication-info {
+    padding: 0;
+    max-width: 600px;
+  }
+
+  .publication-info h2 {
+    font-size: 2rem;
+  }
+
+  .publication-info p {
+    font-size: 1.2rem;
+  }
+}
+
+.publications-footer {
+  text-align: center;
+  margin: 80px auto 40px auto;
+  max-width: 900px;
+}
+
+.publications-footer-text {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.publications-footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.publications-footer-links a {
+  text-decoration: none;
+  font-weight: bold;
+  padding: 12px 22px;
+  border: 2px solid var(--black);
+  color: var(--black);
+  background: var(--white);
+  transition: 0.25s ease;
+}
+
+.publications-footer-links a:hover {
+  background: var(--black);
+  color: var(--yellow);
+}
+
+.search-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 10, 0.92);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 2000;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-search {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  background: none;
+  border: 2px solid #FAFAFA;
+  color: #FAFAFA;
+  font-size: 2rem;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s ease;
+  line-height: 1;
+}
+
+.close-search:hover {
+  background: #F7E000;
+  border-color: #F7E000;
+  color: #0A0A0A;
+}
+
+.search-content {
+  width: 90%;
+  max-width: 700px;
+  text-align: center;
+}
+
+.search-label {
+  color: #F7E000;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+
+.search-input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+#search-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 4px solid #F7E000;
+  color: #FAFAFA;
+  font-size: 3rem;
+  outline: none;
+  text-align: center;
+  font-family: 'Georgia', serif;
+  padding-bottom: 10px;
+  box-sizing: border-box;
+}
+
+#search-input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.suggestions-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 30px;
+}
+
+.suggestions-list li {
+  color: #FAFAFA;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  font-family: 'Georgia', serif;
+}
+
+.suggestions-list li:hover {
+  color: #F7E000;
+}
+
+.empty-state {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1rem;
+  margin-top: 20px;
+  display: none;
+}
+
+body {
+  opacity: 1;
+  transition: opacity 0.4s ease;
+}
+
+body.fade-out {
+  opacity: 0;
+}
+
+.footer {
+  border-top: 2px solid var(--black);
+  margin-top: 80px;
+  padding: 20px 40px;
+  background: rgba(255,255,255,0.9);
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#footer-text {
+  color: var(--black);
+  font-size: 0.85rem;
+}
+
+.toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mode-label {
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: var(--black);
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: #ccc;
+  border: 2px solid var(--black);
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  height: 12px;
+  width: 12px;
+  left: 2px;
+  bottom: 2px;
+  background-color: var(--black);
+  transition: 0.3s;
+}
+
+input:checked + .slider {
+  background-color: var(--yellow);
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+body.dark-mode .publication-card {
+  background: #0a0a0a;
+  border: 4px solid #FAFAFA;
+  box-shadow: 10px 10px 0 #FAFAFA;
+}
+
+body.dark-mode .publication-info h2 {
+  color: #F7E000;
+}
+
+body.dark-mode .publication-info p {
+  color: rgba(255,255,255,0.95);
+}
+
+body.dark-mode .view-more-btn {
+  border: 3px solid #FAFAFA;
+  color: #FAFAFA;
+  background: transparent;
+}
+
+body.dark-mode .view-more-btn:hover {
+  background: #F7E000;
+  color: #0A0A0A;
+  border-color: #F7E000;
+}
+
+body.dark-mode .publications-footer-text {
+  color: rgba(255,255,255,0.9);
+}
+
+body.dark-mode .publications-footer-links a {
+  border: 2px solid #FAFAFA;
+  color: #FAFAFA;
+  background: transparent;
+}
+
+body.dark-mode .publications-footer-links a:hover {
+  background: #F7E000;
+  color: #0A0A0A;
+  border-color: #F7E000;
+}
+
+body.dark-mode .footer {
+  background: rgba(0,0,0,0.85);
+  border-top-color: #FAFAFA;
+}
+
+body.dark-mode #footer-text,
+body.dark-mode .mode-label {
+  color: rgba(255,255,255,0.9);
+}

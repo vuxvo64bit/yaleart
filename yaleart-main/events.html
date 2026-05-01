@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Events - Yale Art</title>
+  <link rel="stylesheet" href="static/css/home.css" />
+  <link rel="stylesheet" href="static/css/events.css" />
+</head>
+
+<body>
+  
+  <header class="header">
+    <div class="logo">Yale School of Art</div>
+    
+    <button class="hamburger" id="hamburger-open">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="nav" id="side-menu">
+      <button class="close-btn" id="hamburger-close">&times;</button>
+      <a href="home.html">About</a>
+      <a href="admissions.html">Admissions</a>
+      <a href="exhibitions.html">Exhibitions</a>
+      <a href="publications.html">Publications</a>
+      <a href="events.html" class="current-page">Events</a>
+      <a href="contact.html">Contact</a>
+
+      <button class="search-trigger" id="search-open">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </button>
+    </nav>
+  </header>
+
+  <!-- the serach overlay -->
+  <div class="search-overlay" id="search-overlay">
+    <button class="close-search" id="search-close">&times;</button>
+    <div class="search-content">
+      <h2 class="search-label">Search Events</h2>
+      <div class="search-input-wrapper">
+        <input type="text" id="search-input" placeholder="Start typing..." autocomplete="off" />
+        <div id="search-loader" class="loader"></div>
+      </div>
+      <ul id="search-results" class="suggestions-list"></ul>
+      <p id="no-results" class="empty-state">No matching pages found.</p>
+    </div>
+  </div>
+
+  <!-- this is the main content part -->
+  <main class="content">
+    <h1 class="page-title">PUBLIC EVENTS</h1>
+    
+    <div class="events-grid">
+      <div class="event-box">
+        <span class="event-date">31-MAR-2026</span>
+        <h2>SPRING OPEN STUDIOS</h2>
+        <p class="event-description">Come see the art students work. It's free.</p>
+        <img src="Rembrandt_The_Artist_in_his_studio.jpg" alt="Spring Open Studios" class="event-img">
+      </div>
+
+      <div class="event-box">
+        <span class="event-date">05-APR-2026</span>
+        <h2>ARTIST LECTURE</h2>
+        <p class="event-description">Jane Doe talks about stuff. Auditorium A.</p>
+        <img src="istockphoto-1884762309-612x612.jpg" alt="Artist Lecture" class="event-img">
+      </div>
+
+      <div class="event-box special-event"> 
+        <span class="event-date">12-APR-2026</span>
+        <h2>THESIS SHOW</h2>
+        <p class="event-description">THE GRADUATES ARE FINISHED.</p>
+        <img src="thesis-complex-like-puzzle-pictured-as-word-pieces-being-complicated-topic-to-show-needs-cooperating-fit-together-428265082.webp" alt="Thesis Show" class="event-img">
+      </div>
+    </div>
+  </main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footer-text">&copy; Yale School of Art | 1156 Chapel Street, New Haven, CT</p>
+    
+    <div class="toggle-container">
+      <span class="mode-label">DARK MODE</span>
+      <label class="switch">
+        <input type="checkbox" id="dark-mode-toggle" onclick="toggleDarkMode()">
+        <span class="slider"></span>
+      </label>
+    </div>
+  </div>
+</footer>
+
+
+<script src="static/js/dark.js"></script>
+  <script src="static/js/events.js"></script>
+</body>
+
+

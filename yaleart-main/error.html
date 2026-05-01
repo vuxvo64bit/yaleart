@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Form Error - Yale Art</title>
+  <link rel="stylesheet" href="static/css/home.css" />
+  <link rel="stylesheet" href="static/css/error.css" />
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo">Yale School of Art</div>
+    <nav class="nav">
+      <a href="home.html">About</a>
+      <a href="admissions.html">Admissions</a>
+      <a href="exhibitions.html">Exhibitions</a>
+      <a href="publications.html">Publications</a>
+      <a href="events.html">Events</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="content error-page">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <div class="error-container">
+
+      <div class="error-heading-group">
+        <h1 class="error-title">ERROR</h1>
+        <p class="error-code">HTTP 400 — Bad Request</p>
+      </div>
+
+      <p class="error-subtitle">Form Submission Failed</p>
+
+      <div class="error-box">
+        <div class="error-box-header">The following fields are required:</div>
+        <div class="error-item">
+          <div class="error-icon">!</div>
+          Name is required
+        </div>
+        <div class="error-item">
+          <div class="error-icon">!</div>
+          Email is required
+        </div>
+      </div>
+
+      <p class="error-hint">Please fill in all required fields and resubmit the form.</p>
+
+      <a href="contact.html" class="error-button">Try Again</a>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <p id="footer-text">&copy; Yale School of Art | 1156 Chapel Street, New Haven, CT</p>
+      <div class="toggle-container">
+        <span class="mode-label">DARK MODE</span>
+        <label class="switch">
+          <input type="checkbox" id="dark-mode-toggle" onclick="toggleDarkMode()">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+  </footer>
+
+  <script src="static/js/script.js"></script>
+
+</body>
+</html>

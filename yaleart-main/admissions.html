@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admissions - Yale Art</title>
+  <link rel="stylesheet" href="static/css/admissions.css" />
+</head>
+<body>
+  <div id="search-overlay" class="search-overlay">
+    <button class="close-search" id="search-close">&times;</button>
+    <div class="search-content">
+      <h2 class="search-label">Search the Yale Wiki</h2>
+      <input type="text" id="search-input" placeholder="Start typing..." autocomplete="off">
+      <ul id="search-results" class="suggestions-list"></ul>
+      <p id="no-results" class="empty-state">No matching pages found.</p>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="logo">Yale School of Art</div>
+    <nav class="nav" id="side-menu">
+      <button class="close-btn" id="hamburger-close">&times;</button>
+      <a href="home.html">About</a>
+      <a href="admissions.html">Admissions</a>
+      <a href="exhibitions.html">Exhibitions</a>
+      <a href="publications.html">Publications</a>
+      <a href="events.html">Events</a>
+      <a href="contact.html">Contact</a>
+      <button class="search-trigger" id="search-open">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </button>
+    </nav>
+    <button class="hamburger" id="hamburger-open"><span></span><span></span><span></span></button>
+  </header>
+
+  <main class="content">
+    <section class="admissions-info">
+      <p class="yale-intro">
+        For information on applications to the MFA program, please click the "Graduate Admission" link below. 
+        The undergraduate admissions process is handled entirely through <a href="#">Yale College</a>. 
+        Please refer all undergraduate admissions questions to the <a href="#">Yale College Undergraduate Admissions Office</a>.
+      </p>
+
+      <div class="yale-grid">
+        <a href="#" class="yale-box"><span>Graduate Admission</span></a>
+        <a href="#" class="yale-box"><span>Tuition, Fees, & Financing Your Education</span></a>
+        <a href="#" class="yale-box"><span>Graduate Study Areas</span></a>
+        <a href="#" class="yale-box"><span>Courses</span></a>
+      </div>
+    </section>
+  </main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footer-text">&copy; Yale School of Art | 1156 Chapel Street, New Haven, CT</p>
+    
+    <div class="toggle-container">
+      <span class="mode-label">DARK MODE</span>
+      <label class="switch">
+        <input type="checkbox" id="dark-mode-toggle" onclick="toggleDarkMode()">
+        <span class="slider"></span>
+      </label>
+    </div>
+  </div>
+</footer>
+
+<script src="static/js/script.js"></script>
+</body>

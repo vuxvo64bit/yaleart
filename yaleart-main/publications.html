@@ -1,0 +1,120 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Publications - Yale Art</title>
+  <link rel="stylesheet" href="static/css/home.css" />
+  <link rel="stylesheet" href="static/css/publications.css" />
+</head>
+
+<body>
+
+  <header class="header">
+    <div class="logo">Yale School of Art</div>
+
+    <button class="hamburger" id="hamburger-open">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav" id="side-menu">
+      <button class="close-btn" id="hamburger-close">&times;</button>
+      <a href="home.html">About</a>
+      <a href="admissions.html">Admissions</a>
+      <a href="exhibitions.html">Exhibitions</a>
+      <a href="#" class="current-page">Publications</a>
+      <a href="events.html">Events</a>
+      <a href="contact.html">Contact</a>
+
+      <button class="search-trigger" id="search-open">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+      </button>
+    </nav>
+  </header>
+
+  <div class="search-overlay" id="search-overlay">
+    <button class="close-search" id="search-close">&times;</button>
+    <div class="search-content">
+      <h2 class="search-label">Search Publications</h2>
+      <div class="search-input-wrapper">
+        <input type="text" id="search-input" placeholder="Start typing..." autocomplete="off" />
+        <div id="search-loader" class="loader"></div>
+      </div>
+      <ul id="search-results" class="suggestions-list"></ul>
+      <p id="no-results" class="empty-state">No matching pages found.</p>
+    </div>
+  </div>
+
+  <main class="content">
+
+    <section class="publication-container">
+
+      <div class="publication-card">
+
+        <img 
+          src="images/publicationslight.png"
+          data-light="images/publicationslight.png"
+          data-dark="images/publicationsdark.png"
+          class="publication-image"
+          alt="Yale School of Art Publication Cover"
+        >
+
+        <div class="publication-info">
+          <h2>Body of Work: Yale School of Art MFA 2020</h2>
+
+          <p>
+            Body of Work showcases the collected work of the graduating MFA class of 2020, and marks the fourth installment of Yale School of Art's all-school MFA book series. Featuring an afterword by Stavros Niarchos Foundation Dean and Professor of Art Marta Kuzma, and written contributions from students across all departments.
+          </p>
+
+          <a href="publication-detail.html" class="view-more-btn">
+            View More
+          </a>
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="publications-footer">
+
+      <p class="publications-footer-text">
+        This series of printed publications was initiated in 2017 and features the work of each recently graduated MFA class.
+      </p>
+
+      <div class="publications-footer-links">
+        <a href="https://art.yale.edu/publications" target="_blank">
+          View All Publications
+        </a>
+        <a href="https://library.yale.edu" target="_blank">
+          Yale Library Archive
+        </a>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <p id="footer-text">
+        &copy; Yale School of Art | 1156 Chapel Street, New Haven, CT
+      </p>
+
+      <div class="toggle-container">
+        <span class="mode-label">DARK MODE</span>
+        <label class="switch">
+          <input type="checkbox" id="dark-mode-toggle" onclick="toggleDarkMode()">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+  </footer>
+
+  <script src="static/js/dark.js"></script>
+  <script src="static/js/publications.js"></script>
+
+</body>
+</html>
