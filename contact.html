@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - Yale Art</title>
+  <link rel="stylesheet" href="static/css/home.css" />
+  <link rel="stylesheet" href="static/css/contact.css" />
+</head>
+
+<body>
+
+  <div id="search-overlay" class="search-overlay">
+    <button class="close-search" id="search-close">&times;</button>
+    <div class="search-content">
+      <h2 class="search-label">Search the Yale Wiki</h2>
+      <div class="search-input-wrapper">
+        <input type="text" id="search-input" placeholder="Start typing..." autocomplete="off">
+        <div id="search-loader" class="loader"></div>
+      </div>
+      <ul id="search-results" class="suggestions-list"></ul>
+      <p id="no-results" class="empty-state">No matching pages found.</p>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="logo">Yale School of Art</div>
+
+    <nav class="nav" id="side-menu">
+      <button class="close-btn" id="hamburger-close">&times;</button>
+      <a href="home.html">About</a>
+      <a href="admissions.html">Admissions</a>
+      <a href="exhibitions.html">Exhibitions</a>
+      <a href="publications.html">Publications</a>
+      <a href="events.html">Events</a>
+      <a href="contact.html">Contact</a>
+      <div class="search-wrap">
+        <button class="search-trigger" id="search-open">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+      </div>
+    </nav>
+
+    <button class="hamburger" id="hamburger-open">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <main class="content">
+    <div class="contact-grid">
+      
+      <div class="contact-left">
+        <h1 class="page-title">Contact Us:</h1>
+        <div class="directory">
+          <p>YALE SCHOOL OF ART GRADUATE MFA ADMISSION <a href="mailto:art.admissions@yale.edu">art.admissions@yale.edu</a></p>
+          <p>NEWLY ADMITTED AND WAIT LISTED STUDENTS <a href="mailto:taryn.wolf@yale.edu">taryn.wolf@yale.edu</a></p>
+          <p>FINANCIAL AID <a href="mailto:nicole.archer@yale.edu">nicole.archer@yale.edu</a></p>
+          <p>ALUMNI TRANSCRIPTS/EDUCATION VERIFICATION <a href="mailto:emily.cappa@yale.edu">emily.cappa@yale.edu</a></p>
+          <p><a href="#">TRANSCRIPT REQUEST FORM</a></p>
+          <p><a href="#">YALE COLLEGE UNDERGRADUATE ADMISSIONS</a></p>
+          <p>UNDERGRADUATE ART MAJOR <a href="mailto:art.dus@yale.edu">art.dus@yale.edu</a></p>
+          <p>YALE NORFOLK SUMMER SCHOOL OF ART <a href="mailto:norfolkart@yale.edu">norfolkart@yale.edu</a></p>
+          <p><a href="#">YALE COMMENCEMENT</a></p>
+          <p>PUBLIC AFFAIRS/MEDIA INQUIRIES <a href="mailto:sarah.stevens-morling@yale.edu">sarah.stevens-morling@yale.edu</a></p>
+          <p>DONATIONS AND GIFTS <a href="mailto:nicole.freeman@yale.edu">nicole.freeman@yale.edu</a></p>
+          <p>DIGITAL TECHNOLOGY OFFICE <a href="mailto:art.help@yale.edu">art.help@yale.edu</a></p>
+          <p><a href="#">IT at YALE</a></p>
+          <p>ALL OTHER INQUIRIES <a href="mailto:artschool.info@yale.edu">artschool.info@yale.edu</a></p>
+        </div>
+      </div>
+
+      <div class="contact-right">
+        <div class="login-box">
+          <div class="form-icon-container">
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="contact-icon">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </div>
+
+          <form id="contact-form" class="login-form">
+            <div class="input-group">
+              <input type="text" id="fname" placeholder="FIRST NAME" required>
+              <span class="error-msg" id="fname-error"></span>
+            </div>
+            <div class="input-group">
+              <input type="text" id="lname" placeholder="LAST NAME" required>
+              <span class="error-msg" id="lname-error"></span>
+            </div>
+            <div class="input-group">
+              <input type="email" id="email" placeholder="EMAIL ADDRESS" required>
+              <span class="error-msg" id="email-error"></span>
+            </div>
+            <div class="input-group">
+              <textarea id="message" rows="4" placeholder="YOUR MESSAGE (Min. 30 characters)" required></textarea>
+              <span class="error-msg" id="message-error"></span>
+            </div>
+            
+            <button type="button" id="submit-btn" class="login-button">SEND MESSAGE</button>
+            
+            <div class="loading-bar-container" id="loading-container">
+              <div class="loading-bar" id="loading-bar"></div>
+            </div>
+            <p id="form-status" style="text-align: center; font-weight: bold; margin-top: 10px;"></p>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p id="footer-text">&copy; Yale School of Art | 1156 Chapel Street, New Haven, CT</p>
+    
+    <div class="toggle-container">
+      <span class="mode-label">DARK MODE</span>
+      <label class="switch">
+        <input type="checkbox" id="dark-mode-toggle" onclick="toggleDarkMode()">
+        <span class="slider"></span>
+      </label>
+    </div>
+  </div>
+</footer>
+
+
+<script src="static/js/contactdark.js"></script>
+  <script src="static/js/contact.js"></script>
+</body>

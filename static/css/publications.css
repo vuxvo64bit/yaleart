@@ -1,0 +1,282 @@
+
+.content {
+  padding: 30px 20px;
+}
+
+.intro-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.publication-card {
+  display: flex;
+  flex-direction: column;
+  border: 4px solid black;
+  overflow: hidden;
+}
+
+.publication-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.publication-info {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.publication-info h2 {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.publication-info p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.view-more-btn {
+  display: block;
+  width: 100%;
+  max-width: 250px;
+  margin: 0 auto;
+  border: 4px solid black;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+.view-more-btn:hover {
+  background-color: black;
+  color: white;
+}
+
+/* for desktop */
+@media (min-width: 1280px) {
+  .content {
+    padding: 60px 150px;
+  }
+
+  .publication-card {
+    flex-direction: row;
+  }
+
+  .publication-card img {
+    width: 350px;
+    height: auto;
+    min-height: 450px;
+  }
+
+  .publication-info {
+    padding: 40px;
+    justify-content: center;
+  }
+
+  .publication-info h2 {
+    font-size: 1.6rem;
+  }
+
+  .publication-info p {
+    font-size: 1.2rem;
+  }
+
+  .view-more-btn {
+    max-width: 300px;
+  }
+}
+
+/* the serach overlay */
+.search-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.98); z-index: 2000;
+    display: none; flex-direction: column; align-items: center; padding-top: 10vh;
+}
+.search-content { width: 90%; max-width: 700px; text-align: center; }
+#search-input { width: 100%; background: transparent; border: none; border-bottom: 4px solid white; color: white; font-size: 3rem; outline: none; padding-bottom: 10px; }
+.suggestions-list { margin: 20px 0 0 0; padding: 0; list-style: none; }
+.suggestions-list li { color: white; font-size: 1.5rem; margin-bottom: 10px; cursor: pointer; transition: 0.2s; }
+.suggestions-list li:hover { text-decoration: underline; }
+.empty-state { color: #ccc; margin-top: 20px; display: none; }
+
+.search-content {
+  width: 90%;
+  max-width: 700px;
+}
+
+#search-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 4px solid white;
+  color: white;
+  font-size: 3rem;
+  outline: none;
+  padding-bottom: 10px;
+}
+
+
+
+.empty-state {
+  color: white;
+  display: none;
+  margin-top: 20px;
+  text-align: center;
+  font-style: italic;
+}
+
+#search-loader {
+  position: absolute;
+  right: 15px;
+  width: 20px;
+  height: 20px;
+  border: 3px solid white;
+  border-top: 3px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  display: none;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+
+/* the page transition */
+body {
+    opacity: 1;
+    transition: opacity 0.4s ease;
+}
+
+body.fade-out {
+    opacity: 0;
+}
+
+
+/* Hide the mobile close button by default on desktop */
+.close-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 2rem;
+    cursor: pointer;
+    align-self: flex-end; /* Keeps it to the right in mobile view */
+    padding: 10px 20px;
+}
+
+/* Show it only when the screen is small (inside your existing media query) */
+@media (max-width: 1279px) {
+    .close-btn {
+        display: block; 
+    }
+    
+    .hamburger { display: block; }
+    .nav { 
+        /* ... your existing mobile nav code ... */
+    }
+}
+
+
+/* Update these in your exhibitions.css */
+
+.search-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: #41ff7a; /* This is your --yellow color */
+    z-index: 2000;
+    display: none; 
+    flex-direction: column; 
+    align-items: center; 
+    padding-top: 10vh;
+}
+
+.search-label {
+    color: #0A0A0A; /* Dark text so it shows up on yellow */
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+#search-input { 
+    width: 100%; 
+    background: transparent; 
+    border: none; 
+    border-bottom: 4px solid #0A0A0A; /* Black border to match yellow theme */
+    color: #0A0A0A; /* Black text for the input */
+    font-size: 3rem; 
+    outline: none; 
+    padding-bottom: 10px; 
+}
+
+.suggestions-list li { 
+    color: #0A0A0A; /* Dark text for search results */
+    font-size: 1.5rem; 
+    margin-bottom: 10px; 
+    cursor: pointer; 
+    transition: 0.2s; 
+}
+
+
+
+
+/* --- Dark Mode Support --- */
+
+/* Ensure the intro text and card titles flip color */
+.intro-text, 
+.publication-info h2, 
+.publication-info p {
+    color: var(--black);
+}
+
+/* Update the publication card border */
+.publication-card {
+    border: 4px solid var(--black);
+}
+
+/* Update the View More button to stay visible */
+.view-more-btn {
+    border: 4px solid var(--black);
+    color: var(--black);
+}
+
+.view-more-btn:hover {
+    background-color: var(--black);
+    color: var(--white);
+}
+
+/* Footer layout and toggle alignment */
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#footer-text {
+    color: var(--black);
+    margin: 0;
+}
+
+/* Toggle Switch Styles */
+.toggle-container { display: flex; align-items: center; gap: 10px; }
+.mode-label { font-size: 0.75rem; font-weight: bold; color: var(--black); }
+.switch { position: relative; display: inline-block; width: 40px; height: 20px; }
+.switch input { opacity: 0; width: 0; height: 0; }
+.slider {
+    position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #ccc; transition: .4s; border: 2px solid var(--black);
+}
+.slider:before {
+    position: absolute; content: ""; height: 12px; width: 12px;
+    left: 2px; bottom: 2px; background-color: var(--black); transition: .4s;
+}
+input:checked + .slider { background-color: var(--yellow); }
+input:checked + .slider:before { transform: translateX(20px); }

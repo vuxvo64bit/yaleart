@@ -1,0 +1,187 @@
+/* mobile styles */
+.intro-layout {
+  margin-bottom: 30px;
+}
+
+.main-text {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.exhibition-section {
+  text-align: center; 
+  padding: 20px 10px;
+}
+
+.exhibition-title {
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  font-weight: bold;
+}
+
+.exhibition-details p {
+  margin: 8px 0;
+  font-size: 1rem;
+  line-height: 1.3;
+}
+
+.bold-entry {
+  font-weight: bold;
+  font-size: 1.2rem;
+  display: block;
+  margin: 15px 0 5px 0 !important;
+}
+
+/* desktop adj */
+@media (min-width: 1280px) {
+  .content {
+    padding: 60px 150px; 
+  }
+  
+  .main-text {
+    font-size: 1.5rem;
+    padding: 0 100px;
+    text-align: center; 
+  }
+
+  .exhibition-title {
+    font-size: 2.5rem;
+  }
+
+  .exhibition-details p {
+    font-size: 1.4rem;
+  }
+
+  .bold-entry {
+    font-size: 1.6rem;
+  }
+}
+
+
+/* the serach overlays */
+.search-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.98); z-index: 2000;
+    display: none; flex-direction: column; align-items: center; padding-top: 10vh;
+}
+.search-content { width: 90%; max-width: 700px; text-align: center; }
+#search-input { width: 100%; background: transparent; border: none; border-bottom: 4px solid white; color: white; font-size: 3rem; outline: none; padding-bottom: 10px; }
+.suggestions-list { margin: 20px 0 0 0; padding: 0; list-style: none; }
+.suggestions-list li { color: white; font-size: 1.5rem; margin-bottom: 10px; cursor: pointer; transition: 0.2s; }
+.suggestions-list li:hover { text-decoration: underline; }
+.empty-state { color: #ccc; margin-top: 20px; display: none; }
+
+
+
+/* the page transition*/
+body {
+    opacity: 1;
+    transition: opacity 0.4s ease;
+}
+
+body.fade-out {
+    opacity: 0;
+}
+
+
+/* Hide the mobile close button by default on desktop */
+.close-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 2rem;
+    cursor: pointer;
+    align-self: flex-end; /* Keeps it to the right in mobile view */
+    padding: 10px 20px;
+}
+
+/* Show it only when the screen is small (inside your existing media query) */
+@media (max-width: 1279px) {
+    .close-btn {
+        display: block; 
+    }
+    
+    .hamburger { display: block; }
+    .nav { 
+        /* ... your existing mobile nav code ... */
+    }
+}
+
+
+/* Update these in your exhibitions.css */
+
+.search-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: #F7E000; /* This is your --yellow color */
+    z-index: 2000;
+    display: none; 
+    flex-direction: column; 
+    align-items: center; 
+    padding-top: 10vh;
+}
+
+.search-label {
+    color: #0A0A0A; /* Dark text so it shows up on yellow */
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+#search-input { 
+    width: 100%; 
+    background: transparent; 
+    border: none; 
+    border-bottom: 4px solid #0A0A0A; /* Black border to match yellow theme */
+    color: #0A0A0A; /* Black text for the input */
+    font-size: 3rem; 
+    outline: none; 
+    padding-bottom: 10px; 
+}
+
+.suggestions-list li { 
+    color: #0A0A0A; /* Dark text for search results */
+    font-size: 1.5rem; 
+    margin-bottom: 10px; 
+    cursor: pointer; 
+    transition: 0.2s; 
+}
+
+
+/* --- Dark Mode Support --- */
+
+/* Ensure the main intro text and titles flip color */
+.main-text, 
+.exhibition-title, 
+.exhibition-details p {
+    color: var(--black); 
+    transition: color 0.3s ease;
+}
+
+/* Ensure the footer alignment matches the other pages */
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#footer-text {
+    color: var(--black);
+    margin: 0;
+}
+
+/* Toggle Switch visuals (re-use the same styles from Admissions/Home) */
+.toggle-container { display: flex; align-items: center; gap: 10px; }
+.mode-label { font-size: 0.75rem; font-weight: bold; color: var(--black); }
+.switch { position: relative; display: inline-block; width: 40px; height: 20px; }
+.switch input { opacity: 0; width: 0; height: 0; }
+.slider {
+    position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #ccc; transition: .4s; border: 2px solid var(--black);
+}
+.slider:before {
+    position: absolute; content: ""; height: 12px; width: 12px;
+    left: 2px; bottom: 2px; background-color: var(--black); transition: .4s;
+}
+input:checked + .slider { background-color: var(--yellow); }
+input:checked + .slider:before { transform: translateX(20px); }
